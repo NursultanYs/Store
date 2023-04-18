@@ -1,0 +1,42 @@
+.header{
+    padding: 30px 0px;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+
+    &__logo{
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        font-size: 30px;
+        img{
+            cursor: pointer;
+        }
+    }
+
+    &__content{
+        display: flex;
+        justify-content: space-between;
+
+        ul{
+            display: flex;
+            gap: 40px;
+            font-family: 'Inika';
+            font-weight: 400;
+            font-size: 30px;
+
+            a{
+                color:#000;
+                transition: 0.2s;
+                &:hover{
+                    color:#E06733;
+                    font-weight: 700;
+                }
+            }
+        }
+    }
+
+
+    .active-page{
+        color:#E06733;
+        font-weight: 700;
+    }
+}
