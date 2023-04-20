@@ -79,17 +79,26 @@ async function logJSONDataProducts(urlGet) {
         searchValue=e.target.value;
         parentSelector.innerHTML='';
         secondParentSelector.innerHTML='';
-    jsonData.filter(item=>item.category===allItems[0] || item.category===allItems[1] || item.category===allItems[2] || item.category===allItems[3])
-    .filter((item)=>item.title.toLowerCase().includes(searchValue.toLowerCase()))
-    .forEach(item=>{
-        createAndAdd(item);
-    })
-    })
-    if(viewButton.classList.contains('not__all')){
-
-    }else{
-
-    }
+        jsonData.filter(item=>item.category===allItems[0] || item.category===allItems[1] || item.category===allItems[2] || item.category===allItems[3])
+        .filter((item)=>item.title.toLowerCase().includes(searchValue.toLowerCase()))
+        .forEach(item=>{
+            const element = document.createElement('div');
+            element.classList.add("main__items__item");
+            if(item.price){
+                element.innerHTML += `
+                <img src="${item.src}" alt="${item.altimg}">
+                <p>${item.title}</p>
+                <p>${item.price} $</p>
+                `;
+            }else{
+                element.innerHTML += `
+                <img src="${item.src}" alt="${item.altimg}">
+                <p>${item.title}</p>
+                `;
+            }
+            parentSelector.append(element);
+        })
+        })
 
     jsonData.filter(item=>item.category===allItems[0] || item.category===allItems[1] || item.category===allItems[2] || item.category===allItems[3])
     .forEach(item=>{
